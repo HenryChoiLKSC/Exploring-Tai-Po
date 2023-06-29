@@ -63,24 +63,12 @@
 	</style>
 	<script>
 		function startApp() {
-			var startScreen = document.getElementById("startScreen");
-			startScreen.style.opacity = 0;
-			var opacity = 0;
-			var intervalId = setInterval(function() {
-				opacity += 0.005;
-				startScreen.style.opacity = opacity;
-				if (opacity >= 1.0) {
-					clearInterval(intervalId);
-				}
-			}, 20);
-
 			var button = document.getElementById("myButton");
 			button.onclick = function() {
-				// Wait for 2 seconds before changing the background
-				setTimeout(function() {
-					document.body.style.backgroundColor = "#FFFFFF";
-				}, 2000);
-			
+				var startScreen = document.getElementById("startScreen");
+				startScreen.style.display = "none";
+				var myButton = document.getElementById("myButton");
+				myButton.style.display = "none";
 				var webviewScreen = document.getElementById("webviewScreen");
 				webviewScreen.style.display = "block";
 				var webView = document.createElement("iframe");
